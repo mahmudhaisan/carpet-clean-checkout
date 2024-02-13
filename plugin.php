@@ -29,24 +29,44 @@ add_action('wp_enqueue_scripts', 'cyc_custom_enqueue_assets');
 // Enqueue CSS and JavaScript
 function cyc_custom_enqueue_assets()
 {
+
+
+    // Call the function to get the filtered selected date and time
+    $filtered_selected_date_time = get_filtered_selected_date_time();
+
+
+    // Serialize the array to pass it to JavaScript
+    $filtered_selected_date_time_json = json_encode($filtered_selected_date_time);
+
+
     wp_enqueue_style('bootstrap-min', plugin_dir_url(__FILE__) . 'assets/css/bootstrap.min.css');
-    wp_enqueue_style('style-css', plugin_dir_url(__FILE__) . 'assets/css/style.css');
     wp_enqueue_style('fontawesome-css-min', plugin_dir_url(__FILE__) . 'assets/css/fontawesome.min.css');
+    wp_enqueue_style('mark-calender-style', plugin_dir_url(__FILE__) . 'assets/css/mark-your-calendar.css');
+    wp_enqueue_style('jquery-ui-css', plugin_dir_url(__FILE__) . 'assets/css/jquery-ui.css');
+    wp_enqueue_style('style-css', plugin_dir_url(__FILE__) . 'assets/css/style.css');
+
+
+
     wp_enqueue_script('bootstrap-min', plugin_dir_url(__FILE__) . 'assets/js/bootstrap.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('script-animate-js', plugin_dir_url(__FILE__) . 'assets/js/jquery-animate-number.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('mark-calender-js', plugin_dir_url(__FILE__) . 'assets/js/mark-your-calendar.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('jquery-ui-js', plugin_dir_url(__FILE__) . 'assets/js/jquery-ui.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('script-js', plugin_dir_url(__FILE__) . 'assets/js/script.js', array('jquery'), '1.0.0', true);
     wp_localize_script(
         'script-js',
         'carpet_checkout',
         array(
             'ajaxurl' => admin_url('admin-ajax.php'),
+            'filtered_selected_date_time' => $filtered_selected_date_time_json // Pass the serialized array
+
         )
     );
 }
 
-require CYC_PLUGINS_PATH . '/includes/admin/admin.php';
-require CYC_PLUGINS_PATH . '/includes/frontend/frontend.php';
+
+include_once CYC_PLUGINS_PATH . '/includes/admin/admin.php';
+include_once CYC_PLUGINS_PATH . '/includes/frontend/frontend.php';
 
 if (is_admin() && defined('DOING_AJAX') && DOING_AJAX) {
-    require CYC_PLUGINS_PATH . '/ajax.php';
+    include_once CYC_PLUGINS_PATH . '/ajax.php';
 }

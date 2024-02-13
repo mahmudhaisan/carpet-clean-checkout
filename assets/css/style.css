@@ -19,3 +19,235 @@
 .show-important {
     display: flex !important;
 }
+.day-col {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+}
+
+.time-slot {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+
+.today {
+    background-color: #ddd; /* Customize the background color for today's date */
+}
+
+.your-info-section {
+  text-shadow: 2px 2px 4px #000;
+}
+
+.bg-section {
+  text-shadow: 2px 2px 4px #000;
+}
+
+
+.card-img-top {
+    height: 200px;
+}
+
+
+/* Media query for screens smaller than 768px (adjust the value based on your needs) */
+@media only screen and (max-width: 767px) {
+    #big-screen-date-picker {
+        display: none; /* Hide the element for smaller screens */
+    }
+}
+
+
+/* Styles for larger screens */
+#mobile-date-available-time {
+    display: none; /* Hide the element by default */
+}
+
+/* Media query for screens 768px and larger (adjust the value based on your needs) */
+@media only screen and (min-width: 768px) {
+    #mobile-date-available-time {
+        display: none; /* Hide the element for larger screens */
+    }
+	.product-data-row .card {
+    height: 400px;
+}
+	.product-data-row a{
+		color: #511251;
+	}
+}
+
+/* Media query for screens smaller than 768px (adjust the value based on your needs) */
+@media only screen and (max-width: 767px) {
+    #mobile-date-available-time {
+        display: block; /* Show the element for smaller screens */
+    }
+	.product-quantity-change {
+    	padding: 8px !important;
+	}
+	input.form-control.input-number-qty {
+		padding: 3px;
+		text-align: center;
+	}
+	
+.card-img-top {
+    height: 150px;
+}
+	.product-data-row .card {
+    	height: 315px;
+	}
+	
+	
+	
+	.modal-body {
+    	text-align: center;
+	}
+	
+	.modal-body img{
+		    max-width: 50%;
+			margin-bottom: 15px;
+			height: auto;	
+	}
+	
+	.mobile-category {
+    	font-size: 20px;
+	}
+	.mobile-product-title {
+    font-size: 17px;
+}
+
+
+}
+
+
+
+.confirm-product-item {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+
+.confirm-products-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.myc-available-time, .myc-available-time-small {
+    background-color: #ffffff;
+    border-radius: 0 !important;
+    color: #000000 !important;
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+
+}
+
+.booking-input-class{
+    background-color: white !important;
+    border-bottom: 1px solid rgb(199, 188, 188) !important;
+    border-radius: 0 !important;
+}
+
+
+#myc-prev-week, #myc-next-week, .myc-date-number, .myc-date-display, div#myc-current-month-year-container {
+    color: black !important;
+    font-weight: 600;
+}
+
+#myc-prev-week, #myc-next-week{
+    border: 0;
+}
+
+
+
+.myc-available-time.selected , .myc-available-time:hover ,.myc-available-time-small.selected, .myc-available-time-small:hover {
+    background-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+
+.modal {
+    z-index: 9999999999; /* Adjust the value as needed */
+}
+
+
+.product-quantity-change{
+
+    background-color: #0ca1eb !important;
+    border: 0 !important;
+    padding: 15px;
+    
+}
+
+.input-number-qty{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+
+.modal-footer button , .next-btn-area button{
+    background-color: #0d6efd !important;
+    color: #fff !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+.next-btn-area button:hover{
+
+    background-color: #fff !important;
+    color: #0d6efd !important;
+}
+
+#service-btn-part-mobile button, #schedule-btn-part-mobile button, #confirm-btn-part-mobile button{
+    background-color: #0d6efd !important;
+    color: #fff !important;
+    padding: 15px !important;
+    margin-top: 5px !important;
+    border: 0 !important;
+}
+
+.ui-widget-header {
+    background-color: #0d6efd !important;
+}
+
+.ui-datepicker{
+    width: 20em !important;
+}
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    padding-left: 2px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+.ui-icon {
+    text-indent: 0px !important;
+    /* background: #0ca1eb; */
+    overflow: visible;
+
+}
+
+div#ui-datepicker-div {
+    z-index: 999999 !important;
+}
+
+
+.time-disabled {
+    /* Define the styles for disabled time slots */
+    color: #999; /* Change the text color to gray */
+    background-color: #f2f2f2; /* Change the background color to light gray */
+    pointer-events: none; /* Disable pointer events to prevent interaction */
+    /* Add any other styles you want for disabled time slots */
+}
